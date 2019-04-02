@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 
 class Table extends Component {
-  componentDidMount = () => {
-    fetch("http://localhost:3000/api/v1/tables")
-      .then(res => res.json())
-      .then(data => console.log(data))
-  }
   render() {
-    console.log("table!")
     return (
       <div className="Table">
-
+        <p>{this.props.table.name}</p>
+        <div className="stage">
+          <div className="table"></div>
+          <div className="paper-block"></div>
+          <div className="mug">
+            <div className="black-tea"></div>
+          </div>
+          <div className="computer">
+            <div className="screen">
+              <div className="website"></div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  /* animation: App-logo-spin infinite 30909s linear; */
+  height: 10vmin;
+  /* pointer-events: none; */
+}
+
+.Buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin: 30px;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: lightgrey;
+  color: white;
+  &:hover{
+    box-shadow: 3px 3px 3px grey;
+  }
+  &:active{
+    background-color: grey;
+  }
+  &:focus {
+    background-color: grey;
+
+  }
+}
+
+
+.App-link {
+  color: #cccccc;
+}
+
+h1 {
+  color: black;
+}
+
+div.react-calendar {
+  margin: 1em auto;
+}
+
+.Table {
+  width: 210px;
+  position: relative;
+  height: 250px;
+  margin: 30px;
+  /* background-color: brown; */
+  overflow: hidden;
+  border-radius: 4px;
+  transition: .3s;
+  cursor: pointer;
+  p{
+    color: black;
+  }
+}
+
+.Table:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5), 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.TableList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.google-calendar {
+  border-width: 0;
+}
+
+.calendar {
+  border-width: 0;
+  /* margin-top: 30px; */
+}
+
+/* CSS FOR DESK */
+
+.stage {
+  position: absolute;
+  /* margin-top: 70px; */
+  transform: scale(.35);
+  bottom: -87px;
+  left: -195px;
+}
+
+.table {
+  position: relative;
+  width: 600px;
+  height: 280px;
+  background-color: #DFB873;
+  border-radius: 6px;
+  box-shadow: 0 12px 0 #AC824B;
+}
+
+.paper-block {
+  position: absolute;
+  bottom: 145px;
+  left: 50px;
+  width: 100px;
+  height: 20px;
+  box-shadow: 0 20px 0 #F47674, 0 35px 0 #fff, 0 39px 0 #CDE8F1, 0 54px 0 #fff, 0 58px 0 #CDE8F1, 0 73px 0 #fff, 0 77px 0 #CDE8F1, 0 92px 0 #fff, 0 96px 0 #CDE8F1, 0 111px 0 #fff, 0 122px 0 #CDE8F1;
+}
+.paper-block:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 123px;
+  background-color: #D2A25F;
+  top: 20px;
+  left: -10px;
+}
+
+.mug {
+  position: absolute;
+  top: -150px;
+  left: 40px;
+  width: 125px;
+  height: 160px;
+  box-shadow: 0px 85px 0 0 #117FC4;
+  border-radius: 130px/175px;
+}
+.mug:before {
+  content: "";
+  position: absolute;
+  top: 155px;
+  left: -25px;
+  width: 70px;
+  height: 40px;
+  border: 5px solid #117FC4;
+  border-radius: 72px/42px;
+  -webkit-transform: rotateZ(20deg);
+          transform: rotateZ(20deg);
+}
+.mug:after {
+  content: "";
+  position: absolute;
+  top: 155px;
+  left: 15px;
+  width: 80px;
+  height: 80px;
+  box-shadow: -25px 25px 0 0 #D2A25F;
+  border-radius: 80px;
+  z-index: -1;
+}
+
+.black-tea {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  width: 110px;
+  height: 80px;
+  background-color: #6C4C24;
+  border-radius: 118px/88px;
+  border: 8px solid #41A7EE;
+  overflow: hidden;
+}
+.black-tea:before {
+  position: absolute;
+  content: "";
+  width: 120px;
+  height: 80px;
+  top: 25px;
+  left: -5px;
+  background-color: #906735;
+  border-radius: 120px/80px;
+}
+
+.computer {
+  position: absolute;
+  top: 50px;
+  left: 220px;
+  width: 340px;
+  height: 170px;
+  background-color: #D8E3E6;
+  border-radius: 8px 8px 6px 6px;
+  box-shadow: 0 10px 0 #969FA1;
+}
+.computer:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 50px;
+  width: 18px;
+  height: 18px;
+  box-shadow: 0px 18px 0 #515656, 22px 18px 0 #515656, 44px 18px 0 #515656, 66px 18px 0 #515656, 88px 18px 0 #515656, 110px 18px 0 #515656, 132px 18px 0 #515656, 154px 18px 0 #515656, 176px 18px 0 #515656, 198px 18px 0 #515656, 220px 18px 0 #515656, 0px 45px 0 #515656, 12px 45px 0 #515656, 22px 45px 0 #515656, 44px 45px 0 #515656, 66px 45px 0 #515656, 88px 45px 0 #515656, 110px 45px 0 #515656, 132px 45px 0 #515656, 154px 45px 0 #515656, 176px 45px 0 #515656, 198px 45px 0 #515656, 210px 45px 0 #515656, 220px 45px 0 #515656, 0px 71px 0 #515656, 10px 71px 0 #515656, 32px 71px 0 #515656, 42px 71px 0 #515656, 64px 71px 0 #515656, 74px 71px 0 #515656, 84px 71px 0 #515656, 94px 71px 0 #515656, 104px 71px 0 #515656, 114px 71px 0 #515656, 124px 71px 0 #515656, 134px 71px 0 #515656, 144px 71px 0 #515656, 154px 71px 0 #515656, 176px 71px 0 #515656, 186px 71px 0 #515656, 208px 71px 0 #515656, 220px 71px 0 #515656;
+  border-radius: 3px;
+}
+.computer:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  top: 112px;
+  left: 125px;
+  background: #C2CDCF;
+  border-radius: 4px;
+}
+
+.screen {
+  position: absolute;
+  width: 340px;
+  height: 190px;
+  background: #515656;
+  top: -190px;
+  border-radius: 8px;
+}
+.screen:after {
+  content: "";
+  position: absolute;
+  border-bottom: 300px solid transparent;
+  border-top: 150px solid rgba(150, 150, 150, 0.1);
+  border-left: 300px solid transparent;
+  top: 20px;
+  left: 20px;
+}
+
+.website {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  top: 20px;
+  left: 20px;
+  background: #424242;
+}
+.website:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 140px;
+  top: -130px;
+  left: 0;
+  box-shadow: 0 140px 0 #232323, 50px 140px 0 #333333, 100px 140px 0 #333333, 150px 140px 0 #333333, 200px 140px 0 #333333, 250px 140px 0 #333333;
+}
+.website:after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  top: 15px;
+  left: 65px;
+  box-shadow: 0 10px 0 #EF8887, 20px 10px 0 #EF8887, 0 35px 0 #C6A9EF, 30px 35px 0 #C6A9EF, 50px 35px 0 #C6A9EF, 100px 35px 0 #EDEDED, 110px 35px 0 #EDEDED, 0px 60px 0 #EDEDED, 5px 60px 0 #EDEDED, 55px 60px 0 #EF8887, 90px 60px 0 #EF8887, 120px 60px 0 #EF8887, 135px 60px 0 #EF8887;
+  border-radius: 3px;
+}

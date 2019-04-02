@@ -1,54 +1,44 @@
 import React, { Component } from "react";
+import SocialButton from "../components/SocialButton";
 
 class Login extends Component {
-  state = {
-    password: '',
-    email: ''
-  }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    const user = {password: this.state.password, email: this.state.email}
-    fetch("http://localhost:3000/api/v1/login", {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user)
-    }).then(res => res.json()).then(data => {
-        if(data.message === "Invalid username or password"){
-          alert('nope')
-        } else {
-          localStorage.setItem('token', data.jwt)
-          console.log('success');
-        }
-      })
+  handleSocialLogin = async user => {
+    const data = await fetch(
+      "http://localhost:3000/api/v1/auth/github/callback",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user)
+      }
+    ).then(res => res.json(res))
+
+    if (data.message === "Invalid username or password") {
+      alert("nope");
+    } else {
+      localStorage.setItem("token", data.jwt);
+      this.props.updateToken(data.jwt);
     }
+  };
 
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
+   handleSocialLoginFailure = err => {
+    console.error(err);
+  };
 
   render() {
+
     return (
       <div className="Login">
-        <form>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            onChange={event => this.handleChange(event)}
-            value={this.state.email}
-          />
-          <input
-            type="text"
-            id="password"
-            name="password"
-            onChange={event => this.handleChange(event)}
-            value={this.state.password}
-          />
-          <input onClick={(e) => this.handleSubmit(e)} type="button" />
-        </form>
+        <SocialButton
+          provider="github"
+          appId="19afa3f5fa107ddca86a"
+          gatekeeper="http://localhost:9999"
+          onLoginSuccess={this.handleSocialLogin}
+          redirect="http://localhost:3001"
+          onLoginFailure={this.handleSocialLoginFailure}
+        >
+          Login with Github
+        </SocialButton>
       </div>
     );
   }
