@@ -5,20 +5,29 @@ import Calendar from 'react-calendar'
 import TableList from "./components/TableList.js";
 import Buttons from "./components/Buttons.js";
 import Login from "./forms/Login.js";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
   state = {
     token: "",
-    selectedDate: ""
+    date: "",
+    time: ''
   };
 
   updateToken = token => {
     this.setState({ token });
   };
 
-  updateDate = selectedDate => {
-    this.setState({selectedDate})
+  updateDate = date => {
+    this.setState({date})
+  }
+
+  updateTime = event => {
+    this.setState({ time: event.target.textContent.toLowerCase()})
+  }
+
+  readTimeAndDate = () => {
+    return {time: this.state.time, date: this.state.date}
   }
 
   render() {
@@ -35,14 +44,16 @@ class App extends Component {
                 frameborder="0"
                 scrolling="no"
               /> */}
-              <Calendar classNAME="calendar" onChange={this.updateDate}/>
-              <Buttons />
               <div className="table-group">
                 <h1> Book a desk!</h1>
                 {!localStorage.getItem("token") ? (
                   <Login updateToken={this.updateToken} />
-                ) : (
-                  <Route path="/tables/" component={() => <TableList />} />
+                  ) : (
+                    <div>
+                  <Calendar classNAME="calendar" onChange={this.updateDate}/>
+                  <Buttons updateTime={this.updateTime} />
+                    <Route path="/tables/" component={() => <TableList date={this.state.date} time={this.state.time} readTimeAndDate={this.readTimeAndDate}/>} />
+                  </div>
                 )}
             </div>
           </div>
