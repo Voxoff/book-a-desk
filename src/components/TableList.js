@@ -32,8 +32,8 @@ class TableList extends Component {
   render() {
     return (
       <div className="TableList">
-        {this.state.tables.map(table => (
-          <Table table={table} key={table.name} readTimeAndDate={this.props.readTimeAndDate} />
+        {this.state.tables.map((table, id) => (
+          <Table table={table} key={table.name} id={id} readTimeAndDate={this.props.readTimeAndDate} updateFlash={this.props.updateFlash} />
         ))}
       </div>
     );

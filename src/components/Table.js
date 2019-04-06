@@ -13,17 +13,19 @@ class Table extends Component {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify(obj)
-    }).then(res => res.json()).then(d => {
-      table_div.remove()
+    }).then(res => res.json()).then(data => {
+      table_div.classList.add('booked-table')
     })
-
+    this.props.updateFlash();
   }
   render() {
+    // debugger
     return (
       <div
-        className="Table"
+        className={`Table ${this.props.table.active ? 'booked-table' : ''}`}
         data-name={this.props.table.name}
         onClick={this.handleClick}
+        id={`Table-${this.props.id}`}
       >
         <p>{this.props.table.name}</p>
         <div className="stage">
