@@ -32,9 +32,9 @@ class Login extends Component {
         <SocialButton
           provider="github"
           appId="19afa3f5fa107ddca86a"
-          gatekeeper="http://localhost:9999"
+          // gatekeeper="http://localhost:9999"
           onLoginSuccess={this.handleSocialLogin}
-          redirect="http://localhost:3001"
+          redirect="https://book-a-desk-api.herokuapp.com"
           onLoginFailure={this.handleSocialLoginFailure}
         >
           Login with Github
