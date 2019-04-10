@@ -63,7 +63,8 @@ class App extends Component {
                 <div>
                   <Flash flash={this.state.flash} />
                   <Calendar
-                    classNAME="calendar"
+                    tileClassName="wood-tile"
+                    className="calendar"
                     onChange={this.updateDate}
                   />
                   <Buttons updateTime={this.updateTime} />

@@ -19,7 +19,6 @@ class Table extends Component {
     this.props.updateFlash();
   }
   render() {
-    // debugger
     return (
       <div
         className={`Table ${this.props.table.active ? 'booked-table' : ''}`}

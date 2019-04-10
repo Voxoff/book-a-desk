@@ -389,3 +389,17 @@ div.react-calendar {
     border: 8px solid #159f15;
   }
 }
+
+.wood-tile {
+  &:focus{
+    background: #DFB774 !important;
+  }
+  &:hover{
+    background: #DFB774 !important;
+  }
+
+}
+
+.react-calendar__tile--active, .react-calendar__tile--hasActive{
+  background-color: #DFB774 !important;
+}
