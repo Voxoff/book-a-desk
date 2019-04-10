@@ -6,13 +6,13 @@ class TableList extends Component {
     tables: []
   }
   async componentDidMount() {
-    const data = await this.fetchData('http://localhost:3000/api/v1/tables');
+    const data = await this.fetchData('https://book-a-desk-api.herokuapp.com/api/v1/tables');
     this.setState({tables: data.tables})
   }
 
   componentDidUpdate = async(prevProps) => {
     if (prevProps.time !== this.props.time || prevProps.date !== this.props.date){
-      const data = await this.fetchData('http://localhost:3000/api/v1/tables');
+      const data = await this.fetchData('https://book-a-desk-api.herokuapp.com/api/v1/tables');
       this.setState({ tables: data.tables })
     } else {
       console.log("updated already")

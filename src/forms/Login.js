@@ -5,13 +5,13 @@ class Login extends Component {
 
   handleSocialLogin = async user => {
     const data = await fetch(
-      "http://localhost:3000/api/v1/auth/github/callback",
+      "https://book-a-desk-api.herokuapp.com/api/v1/auth/github/callback",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user)
       }
-    ).then(res => res.json(res))
+    ).then(res => res.json(res));
 
     if (data.message === "Invalid username or password") {
       alert("nope");

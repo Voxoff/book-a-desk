@@ -6,16 +6,18 @@ class Table extends Component {
     const name = table_div.dataset.name
     let obj = this.props.readTimeAndDate()
     obj.name = name
-    fetch("http://localhost:3000/api/v1/add_booking", {
-      method: 'POST',
+    fetch("https://book-a-desk-api.herokuapp.com//api/v1/add_booking", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`
       },
       body: JSON.stringify(obj)
-    }).then(res => res.json()).then(data => {
-      table_div.classList.add('booked-table')
     })
+      .then(res => res.json())
+      .then(data => {
+        table_div.classList.add("booked-table");
+      });
     this.props.updateFlash();
   }
   render() {
