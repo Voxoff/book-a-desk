@@ -32,7 +32,7 @@ class Login extends Component {
         <SocialButton
           provider="github"
           appId="19afa3f5fa107ddca86a"
-          gatekeeper="https://flatiron-gate.herokuapp.com/"
+          gatekeeper="https://flatiron-gate.herokuapp.com"
           onLoginSuccess={this.handleSocialLogin}
           redirect="https://book-a-desk.herokuapp.com"
           onLoginFailure={this.handleSocialLoginFailure}
