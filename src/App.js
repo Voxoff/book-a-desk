@@ -6,7 +6,7 @@ import TableList from "./components/TableList.js";
 import Buttons from "./components/Buttons.js";
 import Flash from "./components/Flash.js";
 import Login from "./forms/Login.js";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 
 class App extends Component {
   state = {
