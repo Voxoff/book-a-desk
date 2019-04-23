@@ -1,6 +1,6 @@
 class API {
   static init() {
-    this.gatekeeperURL = 'https://flatiron-gate.herokuapp.com'
+    this.gatekeeperURL = 'https://flatiron-keeper-of-gates.herokuapp.com'
     // this.gatekeeperURL = 'http://localhost:9999'
     // this.baseURL = 'http://localhost:3000/api/v1'
     this.baseURL = 'https://book-a-desk-app.herokuapp.com/api/v1'
