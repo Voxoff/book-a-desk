@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import Table from './Table.js'
+import API from '../API'
 
 class TableList extends Component {
   state = {
     tables: []
   }
   async componentDidMount() {
-    const data = await this.fetchData('https://book-a-desk-api.herokuapp.com/api/v1/tables');
+    const data = await this.fetchData(API.tablesURL);
     this.setState({tables: data.tables})
   }
 
   componentDidUpdate = async(prevProps) => {
     if (prevProps.time !== this.props.time || prevProps.date !== this.props.date){
-      const data = await this.fetchData('https://book-a-desk-api.herokuapp.com/api/v1/tables');
+      const data = await this.fetchData(API.tablesURL);
       this.setState({ tables: data.tables })
-    } else {
-      console.log("updated already")
     }
   }
 
@@ -32,9 +31,13 @@ class TableList extends Component {
   render() {
     return (
       <div className="TableList">
-        {this.state.tables.map((table, id) => (
+        {this.state.tables ?
+        this.state.tables.map((table, id) => (
           <Table table={table} key={table.name} id={id} readTimeAndDate={this.props.readTimeAndDate} updateFlash={this.props.updateFlash} />
-        ))}
+        ))
+        :
+        null
+        }
       </div>
     );
   }

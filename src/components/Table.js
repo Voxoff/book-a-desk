@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import API from '../API'
+
 
 class Table extends Component {
   handleClick = (event) => {
@@ -6,15 +8,7 @@ class Table extends Component {
     const name = table_div.dataset.name
     let obj = this.props.readTimeAndDate()
     obj.name = name
-    fetch("https://book-a-desk-api.herokuapp.com//api/v1/add_booking", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      },
-      body: JSON.stringify(obj)
-    })
-      .then(res => res.json())
+    API.post(API.addBookingURL, obj)
       .then(data => {
         table_div.classList.add("booked-table");
       });

@@ -17,7 +17,6 @@ class App extends Component {
   };
 
   componentDidUpdate() {
-    console.log('hey')
     this.state.flash && setTimeout(() => { this.updateFlash() }, 3000)
   }
 
