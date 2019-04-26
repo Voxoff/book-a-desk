@@ -26,6 +26,7 @@ class TableList extends Component {
     const date = this.props.date && this.props.date.toDateString()
     return await fetch(url, {method: 'POST', headers, body: JSON.stringify({time: this.props.time, date})})
       .then(res => res.json())
+      .catch(err => console.log(err))
   }
 
   render() {
